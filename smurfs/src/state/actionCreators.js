@@ -11,13 +11,11 @@ export const getSmurfs = () => dispatch => {
             type: actionTypes.GET_SMURF_DATA,
             payload: response.data
         })
+    })
         .catch(error => {
             dispatch({
             type: actionTypes.SET_ERROR,
-            payload:error.message })
-        })
-        .finally(() => {
-            dispatch({ type: actionTypes.GET_SMURF_DATA})
+            payload:error.message 
         })
     })
 }

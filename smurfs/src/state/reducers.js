@@ -10,11 +10,10 @@ import * as actionTypes from './actionTypes';
 // }
 
 const initialSmurfState = [];
-
 export function displayReducer(state = initialSmurfState, action){
     switch(action.type){
         case actionTypes.GET_SMURF_DATA:
-            return state
+            return action.payload
         case actionTypes.SET_ERROR:
             return 'There is an error';
         default: 
