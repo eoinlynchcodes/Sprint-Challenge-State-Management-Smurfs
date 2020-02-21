@@ -7,30 +7,30 @@ import { SmurfTemplate } from "./SmurfTemplate";
 function App( {
   getSmurfs,
   dataToDisplay, 
+  changeInput,
+  postNewSmurf,
+  smurfFormData,
   formValues
 }) {
-
-  console.log(dataToDisplay);
-
   useEffect(() => {
     getSmurfs();
   }, []);
 
-  // const onSubmit = event => {
-  //   event.preventDefault();
-  //   postNewSmurf({
-  //     name: formValues.name,
-  //     age: formValues.age,
-  //     height: formValues.height
-  //   })
-  // }
+  const onSubmit = event => {
+    event.preventDefault();
+    postNewSmurf({
+      name: smurfFormData.name,
+      age: smurfFormData.age,
+      height: smurfFormData.height
+    })
+  }
 
-  // const onChange = event => {
-  //   actionCreators.changeInput({
-  //     inputName: event.target.name,
-  //     inputValue: event.target.value
-  //   })
-  // }
+  const onChange = event => {
+    changeInput({
+      inputName: event.target.name,
+      inputValue: event.target.value
+    })
+  }
 
   return (
     <div className="App">
@@ -40,34 +40,29 @@ function App( {
           return <SmurfTemplate item={item} key={key} />;
         })}
 
-
-{/* 
       <form onSubmit={onSubmit}>
         <label>Name:</label>
         <input 
         placeholder="Name:"
-        value={formValues.name}
-        name="name"
+        value={smurfFormData.name}
         onChange={onChange}
         />
 
         <label>Age:</label>
         <input 
         placeholder="Age:"
-        value={formValues.age}
-        name="age"
+        value={smurfFormData.age}
         onChange={onChange}
         />
 
         <label>Height:</label>
         <input 
         placeholder="Height:"
-        value={formValues.height}
-        name="height"
+        value={smurfFormData.height}
         onChange={onChange}
         />
         <input type="submit"/>
-      </form> */}
+      </form>
     </div>
   );
 }
@@ -77,7 +72,7 @@ function mapStateToProps(state) {
   return {
     dataToDisplay: state.dataToDisplay,
     formValues: state.formReducer,
-    
+    smurfFormData: state.smurfFormData
   };
 }
 

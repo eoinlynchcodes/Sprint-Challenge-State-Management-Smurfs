@@ -18,3 +18,27 @@ export const getSmurfs = () => dispatch => {
       });
     });
 };
+
+export function changeInput({ inputName, inputValue }){
+    return {
+        type: actionTypes.INPUT_CHANGE,
+        payload: { inputName, inputValue }
+    }
+}
+
+export const postNewSmurf = ({ name, age, height }) => dispatch => {
+    axios.post(smurfsAPI, {
+        name,
+        age,
+        height
+    })
+    .then(response => {
+        dispatch({
+            type: actionTypes.SET_POSTED_SMURF,
+            payload: response.data
+        })
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
