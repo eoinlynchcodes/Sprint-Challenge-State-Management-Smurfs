@@ -36,11 +36,7 @@ export function smurfFormReducer(state = initialAddFormState, action){
   switch(action.type){
     case actionTypes.SET_POSTED_SMURF:
       return state.concat(action.payload) // creates a new smurf
-    // case actionTypes.INPUT_CHANGE:
-    //     return {
-    //       ...state,
-    //       [action.payload.inputName]: action.payload.inputValue
-    //     };
+      
     default:
       return state;
   }
