@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 const combinedReducer = combineReducers({
     dataToDisplay: displayReducer,
     formValues: formReducer,
-    smurfFormData: smurfFormReducer
+    // smurfFormData: smurfFormReducer
 })
 
 const store = createStore(

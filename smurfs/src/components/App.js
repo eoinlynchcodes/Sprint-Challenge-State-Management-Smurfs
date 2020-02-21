@@ -9,19 +9,19 @@ function App( {
   dataToDisplay, 
   changeInput,
   postNewSmurf,
-  smurfFormData,
+  // smurfFormData,
   formValues
 }) {
   useEffect(() => {
     getSmurfs();
-  }, []);
+  }, [getSmurfs]);
 
   const onSubmit = event => {
     event.preventDefault();
     postNewSmurf({
-      name: smurfFormData.name,
-      age: smurfFormData.age,
-      height: smurfFormData.height
+      name: formValues.name,
+      age: formValues.age,
+      height: formValues.height
 
       // When I replce the values above, and click submit, it sends the correct data. 
       // But when I do it through the form, it doesn't...
@@ -47,21 +47,24 @@ function App( {
         <label>Name:</label>
         <input 
         placeholder="Name:"
-        value={smurfFormData.name}
+        name="name"
+        value={formValues.name}
         onChange={onChange}
         />
 
         <label>Age:</label>
         <input 
         placeholder="Age:"
-        value={smurfFormData.age}
+        name="age"
+        value={formValues.age}
         onChange={onChange}
         />
 
         <label>Height:</label>
         <input 
         placeholder="Height:"
-        value={smurfFormData.height}
+        name="height"
+        value={formValues.height}
         onChange={onChange}
         />
         <input type="submit"/>
@@ -74,8 +77,8 @@ function mapStateToProps(state) {
   console.log(state);
   return {
     dataToDisplay: state.dataToDisplay,
-    formValues: state.formReducer,
-    smurfFormData: state.smurfFormData
+    formValues: state.formValues,
+    // smurfFormData: state.smurfFormData
   };
 }
 

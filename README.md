@@ -21,12 +21,39 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 ## Self-Study/Essay Questions
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
+ What problem does the context API help solve?
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- Context API is a midway between prop drilling and Redux. It allows you to pass state to components in an efficient manner. 
+
+In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+- Actions send information from the application to the store. They are payloads of information or data. 
+
+- Reducers are functions that act on and change application state.
+
+- Store holds the whole state for the application.  The store is a const variable that is equal to a createStore that is imported from redux. A single reducer is brought into createStore like createStore(combinedReducer)
+
+
+
+
+What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+-Stores hold application state - any application anywhere in the app can access it as long as they hook into it. 
+
+-Components state stays in a component and must be explicitly passed down via props.
+
+
+
+Describe redux-thunk, what does it allow us to do? How does it change our action-creators?
+
+Redux-Thunk allows you to do asynchronous actions and API calls inside action creators. 
+
+
+
+What is your favorite state management system you've learned and this sprint? Please explain why!
+
+- Context API because I can understand it.
+
 
 ## Project Set Up
 

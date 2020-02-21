@@ -5,6 +5,8 @@ export function displayReducer(state = initialSmurfState, action) {
   switch (action.type) {
     case actionTypes.GET_SMURF_DATA:
       return action.payload;
+    case actionTypes.SET_POSTED_SMURF:
+        return state.concat(action.payload) // creates a new smurf
     case actionTypes.SET_ERROR:
       return "There is an error";
     default:
@@ -31,14 +33,13 @@ export function formReducer(state = initialFormState, action) {
   }
 }
 
-const initialAddFormState = []
-export function smurfFormReducer(state = initialAddFormState, action){
-  switch(action.type){
-    case actionTypes.SET_POSTED_SMURF:
-      return state.concat(action.payload) // creates a new smurf
+// const initialAddFormState = []
+// export function smurfFormReducer(state = initialAddFormState, action){
+//   switch(action.type){
+//     case actionTypes.SET_POSTED_SMURF:
+//       return state.concat(action.payload) // creates a new smurf
       
-    default:
-      return state;
-  }
-
-}
+//     default:
+//       return state;
+//   }
+// }
