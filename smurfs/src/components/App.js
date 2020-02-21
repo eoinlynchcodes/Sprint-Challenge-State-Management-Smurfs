@@ -6,7 +6,8 @@ import { SmurfTemplate } from "./SmurfTemplate";
 
 function App( {
   getSmurfs,
-  dataToDisplay
+  dataToDisplay, 
+  formValues
 }) {
 
   console.log(dataToDisplay);
@@ -74,7 +75,9 @@ function App( {
 function mapStateToProps(state) {
   console.log(state);
   return {
-    dataToDisplay: state.dataToDisplay
+    dataToDisplay: state.dataToDisplay,
+    formValues: state.formReducer,
+    
   };
 }
 

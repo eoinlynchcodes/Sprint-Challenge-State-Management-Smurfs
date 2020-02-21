@@ -12,21 +12,28 @@ export function displayReducer(state = initialSmurfState, action) {
   }
 }
 
-// const initialFormState = {
-//   name: "",
-//   age: "",
-//   height: ""
-// };
-// export function formReducer(state = initialFormState, action) {
-//   switch (action.type) {
-//     case actionTypes.INPUT_CHANGE:
-//       return {
-//         ...state,
-//         [action.payload.inputName]: action.payload.inputValue
-//       };
-//     case actionTypes.RESET_FORM:
-//       return initialFormState;
-//     default:
-//       return state;
-//   }
-// }
+const initialFormState = []
+export function formReducer(state = initialFormState, action) {
+  switch (action.type) {
+    case actionTypes.INPUT_CHANGE:
+      return {
+        ...state,
+        [action.payload.inputName]: action.payload.inputValue
+      };
+    case actionTypes.RESET_FORM:
+      return initialFormState;
+    default:
+      return state;
+  }
+}
+
+const smurfState = []
+export function smurfFormReducer(state = smurfState, action){
+  switch(action.type){
+    case actionTypes.SET_POSTED_SMURF:
+      return state.concat(action.payload) // creates a new smurf
+    default:
+      return state;
+  }
+
+}

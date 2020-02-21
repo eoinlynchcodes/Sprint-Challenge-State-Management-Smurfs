@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
-import { displayReducer } from './state/reducers';
+import { displayReducer, formReducer } from './state/reducers';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 const combinedReducer = combineReducers({
-    dataToDisplay: displayReducer
+    dataToDisplay: displayReducer,
+    formValues: formReducer
 })
 
 const store = createStore(
