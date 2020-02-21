@@ -22,6 +22,9 @@ function App( {
       name: smurfFormData.name,
       age: smurfFormData.age,
       height: smurfFormData.height
+
+      // When I replce the values above, and click submit, it sends the correct data. 
+      // But when I do it through the form, it doesn't...
     })
   }
 
