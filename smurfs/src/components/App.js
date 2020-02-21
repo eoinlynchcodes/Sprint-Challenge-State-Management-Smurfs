@@ -5,8 +5,11 @@ import * as actionCreators from '../state/actionCreators';
 import { SmurfTemplate } from "./SmurfTemplate";
 
 function App( {
-  getSmurfs
+  getSmurfs,
+  dataToDisplay
 }) {
+
+  console.log(dataToDisplay);
 
   useEffect(() => {
     getSmurfs();
@@ -32,9 +35,9 @@ function App( {
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
       <div>Welcome to your state management version of Smurfs!</div>
-        {/* {item.map((item, key) => {
+        {dataToDisplay.map((item, key) => {
           return <SmurfTemplate item={item} key={key} />;
-        })} */}
+        })}
 
 
 {/* 
