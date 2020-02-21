@@ -1,7 +1,15 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+
+function App() {
+
+  const [dataFromAPI, setDataFromAPI ] = useState([]);
+
+  useEffect(() => {
+
+    
+  }, [])
+
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
@@ -10,7 +18,6 @@ class App extends Component {
         <div>Have fun!</div>
       </div>
     );
-  }
 }
 
 export default App;
