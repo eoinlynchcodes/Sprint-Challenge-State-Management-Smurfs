@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 const combinedReducer = combineReducers({
-    thisGoesFromCombinedReducerTomapStateToProps: displayReducer
+    dataToDisplay: displayReducer
 })
 
 const store = createStore(

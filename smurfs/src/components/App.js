@@ -1,36 +1,81 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import * as actionCreators from '../state/actionCreators';
+import { SmurfTemplate } from "./SmurfTemplate";
 
-function App({ getSmurfs }) {
+function App( {
+  getSmurfs
+}) {
+
+  useEffect(() => {
+    getSmurfs();
+  }, []);
+
+  // const onSubmit = event => {
+  //   event.preventDefault();
+  //   postNewSmurf({
+  //     name: formValues.name,
+  //     age: formValues.age,
+  //     height: formValues.height
+  //   })
+  // }
+
+  // const onChange = event => {
+  //   actionCreators.changeInput({
+  //     inputName: event.target.name,
+  //     inputValue: event.target.value
+  //   })
+  // }
+
+  return (
+    <div className="App">
+      <h1>SMURFS! 2.0 W/ Redux</h1>
+      <div>Welcome to your state management version of Smurfs!</div>
+        {/* {item.map((item, key) => {
+          return <SmurfTemplate item={item} key={key} />;
+        })} */}
 
 
+{/* 
+      <form onSubmit={onSubmit}>
+        <label>Name:</label>
+        <input 
+        placeholder="Name:"
+        value={formValues.name}
+        name="name"
+        onChange={onChange}
+        />
 
-    useEffect(() => {
-      getSmurfs()
-    }, [])
+        <label>Age:</label>
+        <input 
+        placeholder="Age:"
+        value={formValues.age}
+        name="age"
+        onChange={onChange}
+        />
 
-
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
-    );
+        <label>Height:</label>
+        <input 
+        placeholder="Height:"
+        value={formValues.height}
+        name="height"
+        onChange={onChange}
+        />
+        <input type="submit"/>
+      </form> */}
+    </div>
+  );
 }
 
-
-function mapStateToProps(state){
+function mapStateToProps(state) {
   console.log(state);
   return {
-    getSmurfs: state.getSmurfs
-  }
+    dataToDisplay: state.dataToDisplay
+  };
 }
 
 export default connect(
-mapStateToProps,
-actionCreators
-)(App)
+  mapStateToProps,
+  actionCreators
+)(App);
