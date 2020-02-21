@@ -1,0 +1,22 @@
+import * as actionTypes from './actionTypes';
+
+
+// This initial state may need to become an empty array!!!
+// const initialSmurfState = {
+//     name: '',
+//     age: '',
+//     height: '',
+//     id: ''
+// }
+
+const initialSmurfState = []
+export function displayReducer(state = initialSmurfState, action){
+    switch(action.type){
+        case actionTypes.GET_SMURF_DATA:
+            return state
+        case actionTypes.SET_SMURF_DATA:
+            return state
+        default: 
+        return state
+    }
+}

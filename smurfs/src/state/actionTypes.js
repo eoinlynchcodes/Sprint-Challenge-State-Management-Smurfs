@@ -1,0 +1,2 @@
+export const GET_SMURF_DATA = 'GET_SMURF_DATA';
+export const SET_SMURF_DATA = 'SET_SMURF_DATA';
